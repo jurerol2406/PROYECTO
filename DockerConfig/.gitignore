@@ -1,0 +1,23 @@
+# ----------------------------------------------------------------------
+# ARCHIVOS GENERADOS POR HOME ASSISTANT
+# Estos contienen datos de la ejecución, logs, o bases de datos
+# y NO deben subirse a GitHub.
+# ----------------------------------------------------------------------
+
+# Base de datos principal de Home Assistant
+config/home-assistant_v2.db
+config/home-assistant_v2.db-wal
+config/home-assistant_v2.db-shm
+
+# Archivos de caché y logs
+config/*.log
+config/.cloud/
+config/.storage/
+config/.uuid
+
+# Archivo de secretos (contraseñas, claves API, etc.)
+config/secrets.yaml
+
+# Archivos de caché o temporales de VS Code
+.vscode/
+*.code-workspace
