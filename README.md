@@ -7,7 +7,7 @@
   4. Antonio Villaraso
   5. Juanba Ureña
 
-#PROYECTO NÚMERO 4. DOMÓTICA: 
+# PROYECTO NÚMERO 4. DOMÓTICA: 
 Control de dispositivos con Home Assistant, construcción de
 integraciones y componentes personalizados. Instalación automática y configuración
 rápida. Construir un sistema para el control de cerraduras electrónicas
