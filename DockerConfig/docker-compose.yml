@@ -20,5 +20,18 @@ services:
     # Política de reinicio
     restart: unless-stopped
     
-# Descubrir dispositivos de red
-# network_mode: host
+  # mosquitto
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    container_name: mosquitto
+    restart: unless-stopped
+    ports:
+      # Puerto estándar de MQTT sin cifrar
+      - "1883:1883"
+    volumes:
+      # Persiste la configuración de Mosquitto
+      - ./mosquitto/config:/mosquitto/config
+      # Persiste los datos de las colas (mensajes retenidos)
+      - ./mosquitto/data:/mosquitto/data
+      # Persiste los logs
+      - ./mosquitto/log:/mosquitto/log
