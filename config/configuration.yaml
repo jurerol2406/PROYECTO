@@ -1,0 +1,13 @@
+homeassistant:
+  name: TFG-cerraduraInteligente
+  latitude: !secret home_latitude   # Se usa una variable de secrets.yaml
+  longitude: !secret home_longitude # Se usa una variable de secrets.yaml
+  elevation: 0
+  unit_system: metric
+  time_zone: Europe/Madrid
+# Integración por defecto que habilita la interfaz web
+default_config:
+
+  # Habilita el log para ver mensajes de depuración
+logger:
+  default: info
