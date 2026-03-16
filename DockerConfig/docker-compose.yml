@@ -1,37 +1,22 @@
-version: '3' 
+version: '3.8'
 
 services:
   homeassistant:
     container_name: homeassistant
     image: "ghcr.io/home-assistant/home-assistant:stable"
-    environment:
-      - TZ=/Europe/Madrid
-    
     volumes:
-      # 1. Volumen de Configuración:
-      - ./config:/config
-      
-      # 2. Volumen de Hora:
+      - ./ha_config:/config
       - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    network_mode: host
 
-    ports:
-      - "8123:8123" 
-    
-    # Política de reinicio
-    restart: unless-stopped
-    
-  # mosquitto
   mosquitto:
-    image: eclipse-mosquitto:latest
     container_name: mosquitto
-    restart: unless-stopped
-    ports:
-      # Puerto estándar de MQTT sin cifrar
-      - "1883:1883"
+    image: eclipse-mosquitto
     volumes:
-      # Persiste la configuración de Mosquitto
       - ./mosquitto/config:/mosquitto/config
-      # Persiste los datos de las colas (mensajes retenidos)
       - ./mosquitto/data:/mosquitto/data
-      # Persiste los logs
       - ./mosquitto/log:/mosquitto/log
+    ports:
+      - "1883:1883"
+    restart: unless-stopped
