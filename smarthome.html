@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartHome - Panel de Control ASIR</title>
+    <link rel="stylesheet" href="smarthome.css">
+</head>
+
+<body>
+    <div class="dashboard">
+        <header class="header">
+            <div class="logo">🏠 SmartHome <span>Sistema de Domótica</span></div>
+            <div class="status">🟢 0/12 puertas protegidas</div>
+        </header>
+
+        <main class="main-content">
+            <section class="blueprint-section">
+                <h2>Plano Interactivo</h2>
+                <div id="canvas-container" class="canvas-container">
+                    <p class="placeholder-text">Pega el JSON para generar el plano...</p>
+                </div>
+            </section>
+
+            <aside class="sidebar">
+                <div class="card">
+                    <h3>🔓 Candados Disponibles</h3>
+                    <div class="lock-pool" id="lock-pool">
+                        <div class="lock-item" draggable="true" id="lock-1">🔒</div>
+                        <div class="lock-item" draggable="true" id="lock-2">🔒</div>
+                        <div class="lock-item" draggable="true" id="lock-3">🔒</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>📄 Configuración JSON</h3>
+                    <textarea id="json-input" placeholder="Pega aquí el código de la API..."></textarea>
+                    <button id="btn-generate" class="btn-primary">Generar Plano</button>
+                </div>
+            </aside>
+        </main>
+
+        <footer class="stats-bar">
+            <div class="stat-card">
+                <h4>Habitaciones</h4>
+                <p id="count-rooms">0</p>
+            </div>
+            <div class="stat-card">
+                <h4>Puertas</h4>
+                <p id="count-doors">0</p>
+            </div>
+            <div class="stat-card highlight">
+                <h4>Asignados</h4>
+                <p id="count-assigned">0</p>
+            </div>
+            <div class="stat-card">
+                <h4>Disponibles</h4>
+                <p id="count-available">3</p>
+            </div>
+        </footer>
+    </div>
+    <script src="smarthome.js"></script>
+</body>
+
+</html>
