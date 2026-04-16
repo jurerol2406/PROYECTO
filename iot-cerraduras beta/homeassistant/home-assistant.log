@@ -1,0 +1,3 @@
+2026-04-16 15:44:32.483 WARNING (ImportExecutor_0) [py.warnings] /usr/local/lib/python3.14/site-packages/rich/segment.py:547: SyntaxWarning: 'return' in a 'finally' block
+  return
+

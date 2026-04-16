@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+
+  api:
+    build: ./api
+    ports:
+      - "8000:8000"
+
+  web:
+    build: ./web
+    ports:
+      - "8080:80"
+
+  mosquitto:
+    image: eclipse-mosquitto
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+
+  daemon:
+    build: ./daemon
+    depends_on:
+      - mosquitto
+
+  homeassistant:
+    image: homeassistant/home-assistant
+    volumes:
+      - ./homeassistant:/config
+    ports:
+      - "8123:8123"
+    depends_on:
+      - mosquitto

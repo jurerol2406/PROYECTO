@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "minor_version": 1,
+  "key": "person",
+  "data": {
+    "items": [
+      {
+        "id": "juanba",
+        "name": "juanba",
+        "user_id": "84ffcfe4de874860a334dec150afc047",
+        "device_trackers": []
+      }
+    ]
+  }
+}

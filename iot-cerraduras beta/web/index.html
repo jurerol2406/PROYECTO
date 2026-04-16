@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cerraduras IoT</title>
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <style>
+        body { font-family: Arial; text-align: center; }
+        canvas { border: 1px solid black; margin-top: 10px; }
+        .lock {
+            width: 30px;
+            position: absolute;
+            cursor: grab;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Plano Inteligente</h2>
+
+<input type="file" id="fileInput">
+<button onclick="upload()">Procesar</button>
+
+<br>
+
+<canvas id="canvas"></canvas>
+
+<script>
+const API_URL = "http://localhost:8000/process";
+const MQTT_URL = "ws://localhost:9001";
+
+const client = mqtt.connect(MQTT_URL);
+
+let canvas = document.getElementById("canvas");
+let ctx = canvas.getContext("2d");
+
+let doors = [];
+
+client.on('connect', () => {
+    console.log("MQTT conectado");
+});
+
+async function upload() {
+    const file = document.getElementById("fileInput").files[0];
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    const res = await fetch(API_URL, {
+        method: "POST",
+        body: formData
+    });
+
+    const data = await res.json();
+
+    console.log(data);
+
+    // Dibujar imagen
+    let img = new Image();
+    img.onload = () => {
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
+
+        drawDoors(data.doors);
+    };
+    img.src = URL.createObjectURL(file);
+
+    doors = data.doors;
+}
+
+function drawDoors(doors) {
+    doors.forEach((door, i) => {
+        ctx.strokeStyle = "red";
+        ctx.strokeRect(door.x, door.y, door.w, door.h);
+
+        createLock(door.x, door.y, i);
+    });
+}
+
+function createLock(x, y, id) {
+    let lock = document.createElement("img");
+    lock.src = "https://cdn-icons-png.flaticon.com/512/3064/3064197.png";
+    lock.className = "lock";
+
+    lock.style.left = x + "px";
+    lock.style.top = y + "px";
+
+    lock.draggable = true;
+
+    lock.ondragend = () => {
+        sendState();
+    };
+
+    document.body.appendChild(lock);
+}
+
+function sendState() {
+    const payload = {
+        locks: doors.map((d, i) => ({
+            id: "lock_" + i,
+            state: "closed"
+        }))
+    };
+
+    client.publish("cerraduras/estado", JSON.stringify(payload));
+}
+</script>
+
+</body>
+</html>
