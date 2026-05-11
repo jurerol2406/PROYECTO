@@ -1,0 +1,79 @@
+version: '3.8'
+
+services:
+
+  mosquitto:
+    image: eclipse-mosquitto:2.0
+    container_name: cerraduras-mosquitto
+    restart: unless-stopped
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    networks:
+      - cerraduras-net
+
+  api:
+    build: ./api
+    container_name: cerraduras-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    networks:
+      - cerraduras-net
+
+  web:
+    build: ./web
+    container_name: cerraduras-web
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - smarthome-db:/var/lib/smarthome
+    networks:
+      - cerraduras-net
+    depends_on:
+      - api
+      - mosquitto
+
+  daemon:
+    build: ./daemon
+    container_name: cerraduras-daemon
+    restart: unless-stopped
+    depends_on:
+      - mosquitto
+    volumes:
+      - smarthome-db:/var/lib/smarthome
+    networks:
+      - cerraduras-net
+    environment:
+      - MQTT_BROKER=mosquitto
+      - MQTT_PORT=1883
+      - DB_PATH=/var/lib/smarthome/smarthome.db
+
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    container_name: cerraduras-homeassistant
+    restart: unless-stopped
+    privileged: true
+    ports:
+      - "8123:8123"
+    volumes:
+      - ./homeassistant:/config
+    depends_on:
+      - mosquitto
+    networks:
+      - cerraduras-net
+    environment:
+      - TZ=Europe/Madrid
+
+networks:
+  cerraduras-net:
+    driver: bridge
+
+volumes:
+  smarthome-db:
+    driver: local

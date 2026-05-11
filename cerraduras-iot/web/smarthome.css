@@ -1,0 +1,268 @@
+:root {
+    --bg-color:     #0f172a;
+    --card-bg:      #1e293b;
+    --accent-color: #10b981;
+    --danger-color: #ef4444;
+    --purple-color: #7c3aed;
+    --blue-color:   #0ea5e9;
+    --amber-color:  #f59e0b;
+    --text-main:    #f8fafc;
+    --text-dim:     #94a3b8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.dashboard {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--card-bg);
+    padding-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.logo { font-size: 1.25rem; font-weight: bold; color: var(--accent-color); }
+.logo span { color: var(--text-dim); font-weight: normal; font-size: .82rem; margin-left: 8px; }
+
+/* ── Botones pequeños ─────────────────────────────────────── */
+.btn-sm {
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: .8rem;
+    font-weight: 600;
+    transition: opacity .2s;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+}
+.btn-sm:hover { opacity: .82; }
+.btn-teal   { background: var(--accent-color); }
+.btn-red    { background: var(--danger-color); }
+.btn-purple { background: var(--purple-color); }
+.btn-gray   { background: #475569; }
+
+/* ── Badges de rol ────────────────────────────────────────── */
+.badge-rol {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 20px;
+    font-size: .72rem;
+    font-weight: 600;
+    margin-left: 6px;
+}
+.badge-admin  { background: #7c3aed22; color: #a78bfa; border: 1px solid #7c3aed44; }
+.badge-user   { background: #0ea5e922; color: #38bdf8; border: 1px solid #0ea5e944; }
+.badge-viewer { background: #f59e0b22; color: #fbbf24; border: 1px solid #f59e0b44; }
+
+/* Badges en tablas admin */
+.tbadge-admin  { background: #7c3aed22; color: #a78bfa; border: 1px solid #7c3aed55; padding: 2px 9px; border-radius: 20px; font-size: .73rem; }
+.tbadge-user   { background: #0ea5e922; color: #38bdf8; border: 1px solid #0ea5e955; padding: 2px 9px; border-radius: 20px; font-size: .73rem; }
+.tbadge-viewer { background: #f59e0b22; color: #fbbf24; border: 1px solid #f59e0b55; padding: 2px 9px; border-radius: 20px; font-size: .73rem; }
+.tbadge-perm   { background: #10b98122; color: #10b981; border: 1px solid #10b98155; padding: 2px 9px; border-radius: 20px; font-size: .73rem; }
+
+/* ── MQTT badge ───────────────────────────────────────────── */
+#mqtt-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: .8rem;
+    font-weight: bold;
+    background: rgba(239,68,68,.12);
+    color: #ef4444;
+    border: 1px solid #ef4444;
+    white-space: nowrap;
+    transition: all .3s;
+}
+#mqtt-badge.connected {
+    background: rgba(16,185,129,.1);
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+/* ── Upload panel ─────────────────────────────────────────── */
+.upload-panel {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    border-left: 4px solid var(--accent-color);
+}
+.upload-panel label { font-size: .85rem; color: var(--text-dim); white-space: nowrap; }
+.btn-upload {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity .2s;
+}
+.btn-upload:hover    { opacity: .85; }
+.btn-upload:disabled { opacity: .5; cursor: not-allowed; }
+
+/* ── Spinner ──────────────────────────────────────────────── */
+.spinner {
+    display: none;
+    width: 18px; height: 18px;
+    border: 3px solid #334155;
+    border-top-color: var(--accent-color);
+    border-radius: 50%;
+    animation: spin .7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.placeholder-text { color: var(--text-dim); font-size: .9rem; text-align: center; }
+
+/* ── Layout ───────────────────────────────────────────────── */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 18px;
+}
+
+.blueprint-section h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: var(--text-dim);
+}
+
+.canvas-container {
+    background-color: #020617;
+    border: 2px dashed #334155;
+    border-radius: 12px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.canvas-container svg { width: 100%; height: 100%; }
+
+/* ── Cards ────────────────────────────────────────────────── */
+.card { background-color: var(--card-bg); padding: 18px 20px; border-radius: 12px; margin-bottom: 16px; }
+.card h3 { margin-top: 0; margin-bottom: 12px; font-size: .92rem; }
+
+/* ── Textarea ─────────────────────────────────────────────── */
+textarea {
+    width: 100%;
+    height: 130px;
+    background: #0f172a;
+    color: #4ade80;
+    border: 1px solid #334155;
+    font-family: monospace;
+    font-size: .76rem;
+    padding: 10px;
+    border-radius: 8px;
+    resize: vertical;
+}
+
+/* ── Primary button ───────────────────────────────────────── */
+.btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 11px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: opacity .2s;
+}
+.btn-primary:hover { opacity: .9; }
+
+/* ── Stats bar ────────────────────────────────────────────── */
+.stats-bar {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+.stat-card { background: var(--card-bg); padding: 12px; border-radius: 12px; text-align: center; }
+.stat-card h4 { color: var(--text-dim); margin: 0; font-size: .75rem; }
+.stat-card p  { font-size: 1.35rem; font-weight: bold; margin: 4px 0 0; }
+.highlight p  { color: var(--accent-color); }
+
+/* ── Sidebar ──────────────────────────────────────────────── */
+.sidebar { display: flex; flex-direction: column; }
+
+/* ── Lock pool ────────────────────────────────────────────── */
+.lock-pool { display: flex; flex-wrap: wrap; gap: 4px; min-height: 40px; }
+.lock-item {
+    font-size: 1.8rem;
+    cursor: grab;
+    display: inline-block;
+    margin: 4px;
+    transition: transform .2s;
+    user-select: none;
+}
+.lock-item:active { cursor: grabbing; transform: scale(1.2); }
+.door-node[data-assigned="true"] { filter: drop-shadow(0 0 3px gold); }
+
+/* ── Panel de control ─────────────────────────────────────── */
+#panel-control-detallado {
+    border-top: 3px solid var(--accent-color);
+    max-height: 420px;
+    overflow-y: auto;
+}
+#panel-control-detallado::-webkit-scrollbar { width: 5px; }
+#panel-control-detallado::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+
+.device-row {
+    transition: all .3s ease;
+    animation: slideIn .3s ease-out;
+}
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(10px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── Status ───────────────────────────────────────────────── */
+.status {
+    background: rgba(16,185,129,.08);
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--accent-color);
+    font-weight: bold;
+    font-size: .82rem;
+    color: var(--accent-color);
+}
+
+/* ── Logs ─────────────────────────────────────────────────── */
+#logs-container::-webkit-scrollbar { width: 5px; }
+#logs-container::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .main-content { grid-template-columns: 1fr; }
+    .canvas-container { height: 340px; }
+    .stats-bar { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .header { flex-direction: column; align-items: flex-start; }
+    body { padding: 12px; }
+}
