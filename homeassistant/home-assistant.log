@@ -1,0 +1,9 @@
+2026-05-11 18:46:18.724 WARNING (Recorder) [homeassistant.components.recorder.util] The system could not validate that the sqlite3 database at //config/home-assistant_v2.db was shutdown cleanly
+2026-05-11 18:46:37.755 WARNING (ImportExecutor_0) [py.warnings] /usr/local/lib/python3.14/site-packages/rich/segment.py:547: SyntaxWarning: 'return' in a 'finally' block
+  return
+
+2026-05-11 18:46:46.927 INFO (MainThread) [homeassistant.components.lock] Setting up mqtt.lock
+2026-05-11 18:46:53.007 INFO (MainThread) [homeassistant.components.mqtt.client] MQTT client initialized, birth message sent
+2026-05-11 18:48:40.262 INFO (MainThread) [homeassistant.components.mqtt.entity] Removing component: lock.plano_empresa_4381521a_cerradura_door_21_4381521a
+2026-05-11 18:48:40.272 INFO (MainThread) [homeassistant.components.mqtt.entity] Removing component: lock.plano_empresa_4381521a_cerradura_door_12_4381521a
+2026-05-11 18:49:16.743 INFO (MainThread) [homeassistant.components.mqtt.entity] Removing component: lock.plano_empresa_febd809b_cerradura_door_21_febd809b

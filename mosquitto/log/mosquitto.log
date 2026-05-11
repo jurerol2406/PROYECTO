@@ -1,0 +1,106 @@
+1778222856: mosquitto version 2.0.22 starting
+1778222856: Config loaded from /mosquitto/config/mosquitto.conf.
+1778222856: Opening ipv4 listen socket on port 1883.
+1778222856: Opening ipv6 listen socket on port 1883.
+1778222856: Opening websockets listen socket on port 9001.
+1778222856: mosquitto version 2.0.22 running
+1778222857: New connection from 172.21.0.5:52267 on port 1883.
+1778222857: New client connected from 172.21.0.5:52267 as cerraduras-daemon-empresa (p2, c1, k60).
+1778222933: New client connected from 172.21.0.1:34858 as cerraduras-web-2d103678 (p2, c1, k60).
+1778222951: Client cerraduras-web-2d103678 closed its connection.
+1778222992: New client connected from 172.21.0.1:49814 as cerraduras-web-6a11f00d (p2, c1, k60).
+1778222993: Client cerraduras-web-6a11f00d closed its connection.
+1778223004: New client connected from 172.21.0.1:58546 as cerraduras-web-19a66b25 (p2, c1, k60).
+1778223123: New connection from 172.21.0.4:51153 on port 1883.
+1778223123: New client connected from 172.21.0.4:51153 as 3o5hInNwtVNdj1mkhKyLQR (p2, c1, k60).
+1778223123: Client 3o5hInNwtVNdj1mkhKyLQR disconnected.
+1778223123: New connection from 172.21.0.4:45617 on port 1883.
+1778223123: New client connected from 172.21.0.4:45617 as 5pFmQA0QpCWlHVog54bdlJ (p2, c1, k60).
+1778223139: Client cerraduras-web-19a66b25 closed its connection.
+1778223145: New client connected from 172.21.0.1:60716 as cerraduras-web-794c17c4 (p2, c1, k60).
+1778223161: Client cerraduras-web-794c17c4 closed its connection.
+1778223178: New client connected from 172.21.0.1:50270 as cerraduras-web-f426231a (p2, c1, k60).
+1778223179: Client cerraduras-web-f426231a closed its connection.
+1778223188: New client connected from 172.21.0.1:39824 as cerraduras-web-e17878fc (p2, c1, k60).
+1778223228: Client cerraduras-web-e17878fc closed its connection.
+1778223233: New client connected from 172.21.0.1:60904 as cerraduras-web-f4697c82 (p2, c1, k60).
+1778223298: Client 5pFmQA0QpCWlHVog54bdlJ closed its connection.
+1778223304: Client cerraduras-daemon-empresa closed its connection.
+1778223305: mosquitto version 2.0.22 terminating
+1778223305: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1778223305: Client cerraduras-web-f4697c82 closed its connection.
+1778224655: mosquitto version 2.0.22 starting
+1778224655: Config loaded from /mosquitto/config/mosquitto.conf.
+1778224655: Opening ipv4 listen socket on port 1883.
+1778224655: Opening ipv6 listen socket on port 1883.
+1778224655: Opening websockets listen socket on port 9001.
+1778224655: mosquitto version 2.0.22 running
+1778224656: New connection from 172.21.0.4:50205 on port 1883.
+1778224656: New client connected from 172.21.0.4:50205 as cerraduras-daemon-empresa (p2, c1, k60).
+1778224674: New client connected from 172.21.0.1:36396 as cerraduras-web-1f378490 (p2, c1, k60).
+1778224675: Client cerraduras-web-1f378490 closed its connection.
+1778224683: New connection from 172.21.0.6:43963 on port 1883.
+1778224683: New client connected from 172.21.0.6:43963 as 5XLLh6SJjeLLKwPfe2Wsfk (p2, c1, k60).
+1778224683: New client connected from 172.21.0.1:47312 as cerraduras-web-7124f691 (p2, c1, k60).
+1778224685: Client cerraduras-web-7124f691 closed its connection.
+1778224691: New client connected from 172.21.0.1:42298 as cerraduras-web-35d7c96a (p2, c1, k60).
+1778224693: Client cerraduras-web-35d7c96a closed its connection.
+1778226456: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1778228257: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1778230058: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1778231859: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1778233660: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1778235461: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1778237262: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1778239063: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1778240864: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1778242665: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1778244466: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1778246267: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1778248068: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1778249869: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1778251231: Client 5XLLh6SJjeLLKwPfe2Wsfk closed its connection.
+1778251239: Client cerraduras-daemon-empresa closed its connection.
+1778251240: mosquitto version 2.0.22 terminating
+1778251240: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1778517916: mosquitto version 2.0.22 starting
+1778517916: Config loaded from /mosquitto/config/mosquitto.conf.
+1778517916: Opening ipv4 listen socket on port 1883.
+1778517916: Opening ipv6 listen socket on port 1883.
+1778517916: Opening websockets listen socket on port 9001.
+1778517916: mosquitto version 2.0.22 running
+1778517920: New connection from 172.21.0.6:42393 on port 1883.
+1778517920: New client connected from 172.21.0.6:42393 as cerraduras-daemon-empresa (p2, c1, k60).
+1778517945: New client connected from 172.21.0.1:42084 as cerraduras-web-b1547303 (p2, c1, k60).
+1778517966: Client cerraduras-web-b1547303 closed its connection.
+1778517983: New client connected from 172.21.0.1:55772 as cerraduras-web-58490f3c (p2, c1, k60).
+1778518006: New connection from 172.21.0.4:57763 on port 1883.
+1778518006: New client connected from 172.21.0.4:57763 as 3kj0PFgyq1kOULGvNp5Oay (p2, c1, k60).
+1778518235: Client cerraduras-web-58490f3c closed its connection.
+1778518697: New client connected from 172.21.0.1:40524 as cerraduras-web-e8828e59 (p2, c1, k60).
+1778519722: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1778519876: Client cerraduras-web-e8828e59 closed its connection.
+1778519903: New client connected from 172.21.0.1:59964 as cerraduras-web-54cdccc9 (p2, c1, k60).
+1778521523: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1778522174: Client cerraduras-web-54cdccc9 closed its connection.
+1778522529: New client connected from 172.21.0.1:53312 as cerraduras-web-baca8457 (p2, c1, k60).
+1778523046: Client cerraduras-web-baca8457 closed its connection.
+1778523060: New client connected from 172.21.0.1:44486 as cerraduras-web-56d01afd (p2, c1, k60).
+1778523069: Client cerraduras-web-56d01afd closed its connection.
+1778523086: New client connected from 172.21.0.1:53474 as cerraduras-web-4571c400 (p2, c1, k60).
+1778523113: Client cerraduras-web-4571c400 closed its connection.
+1778523124: New client connected from 172.21.0.1:52808 as cerraduras-web-1ca54d16 (p2, c1, k60).
+1778523136: Client cerraduras-web-1ca54d16 closed its connection.
+1778523151: New client connected from 172.21.0.1:46088 as cerraduras-web-6c4aa911 (p2, c1, k60).
+1778523324: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1778524850: Client cerraduras-web-6c4aa911 closed its connection.
+1778525029: New client connected from 172.21.0.1:37366 as cerraduras-web-05989f82 (p2, c1, k60).
+1778525032: Client cerraduras-web-05989f82 closed its connection.
+1778525038: New client connected from 172.21.0.1:57510 as cerraduras-web-f8bdae09 (p2, c1, k60).
+1778525041: Client cerraduras-web-f8bdae09 closed its connection.
+1778525048: New client connected from 172.21.0.1:41998 as cerraduras-web-9cffaae1 (p2, c1, k60).
+1778525090: Client 3kj0PFgyq1kOULGvNp5Oay closed its connection.
+1778525097: Client cerraduras-daemon-empresa closed its connection.
+1778525098: mosquitto version 2.0.22 terminating
+1778525098: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1778525098: Client cerraduras-web-9cffaae1 closed its connection.
