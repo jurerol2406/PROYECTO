@@ -1,4 +1,5 @@
 # PROYECTO INTERMODULAR DE ADMINISTRACIÓN DE SISTEMAS INFORMÁTICOS EN RED
+# PROYECTO FINAL -> Carpeta "cerraduras-iot (no confundir con "iot-cerraduras beta")
 
 # INTEGRANTES DEL GRUPO:
   1. Adrián Alonso
