@@ -1,12 +1,14 @@
+<div align="center">
+
 # Cerraduras Virtuales Inteligentes
 
 Proyecto intermodular ASIR orientado a la gestión de accesos inteligentes mediante tecnologías IoT, visión artificial y arquitectura basada en microservicios.
 
-El sistema permite analizar planos de una empresa, generar automáticamente un entorno interactivo y gestionar cerraduras virtuales sincronizadas en tiempo real mediante MQTT y Home Assistant.
+</div>
 
 ---
 
-# Integrantes
+## Integrantes
 
 - Adrián Alonso
 - Ismael Quesada
@@ -16,7 +18,7 @@ El sistema permite analizar planos de una empresa, generar automáticamente un e
 
 ---
 
-# Descripción
+## Descripción
 
 La plataforma integra múltiples tecnologías para construir un entorno domótico centralizado y escalable:
 
@@ -32,7 +34,7 @@ El objetivo principal del proyecto es demostrar la integración real entre servi
 
 ---
 
-# Arquitectura del sistema
+## Arquitectura del sistema
 
 ```text
 Usuario
@@ -55,29 +57,29 @@ MQTT (Mosquitto)
 
 ---
 
-# Tecnologías utilizadas
+## Tecnologías utilizadas
 
-## Backend
+### Backend
 
 - Python 3
 - FastAPI
 - OpenCV
 - Uvicorn
 
-## Frontend
+### Frontend
 
 - PHP
 - JavaScript
 - HTML/CSS
 - MQTT.js
 
-## IoT y Domótica
+### IoT y Domótica
 
 - Mosquitto MQTT
 - Home Assistant
 - MQTT Discovery
 
-## Infraestructura
+### Infraestructura
 
 - Docker
 - Docker Compose
@@ -85,16 +87,16 @@ MQTT (Mosquitto)
 
 ---
 
-# Funcionalidades principales
+## Funcionalidades principales
 
-## Procesamiento de planos
+### Procesamiento de planos
 
 - Subida de imágenes
 - Limpieza y filtrado de planos
 - Detección de habitaciones y puertas
 - Generación automática de estructura JSON
 
-## Plataforma web
+### Plataforma web
 
 - Inicio de sesión y control de acceso
 - Gestión de usuarios y permisos
@@ -102,14 +104,14 @@ MQTT (Mosquitto)
 - Asignación interactiva de cerraduras
 - Logs y auditoría
 
-## Comunicación en tiempo real
+### Comunicación en tiempo real
 
 - MQTT sobre WebSockets
 - Sincronización instantánea
 - Actualización de estados en vivo
 - Gestión dinámica de dispositivos
 
-## Integración domótica
+### Integración domótica
 
 - Creación automática de cerraduras en Home Assistant
 - MQTT Discovery
@@ -118,26 +120,17 @@ MQTT (Mosquitto)
 
 ---
 
-# Roles del sistema
+## Roles del sistema
 
-## Administrador
-
-- Gestión total de usuarios y planos
-- Asignación de permisos
-- Auditoría y logs
-
-## Usuario
-
-- Interacción con planos autorizados
-- Control de cerraduras
-
-## Viewer
-
-- Acceso en modo solo lectura
+| Rol | Descripción |
+|------|-------------|
+| **Administrador** | Gestión total de usuarios, permisos y planos |
+| **Usuario** | Interacción con planos autorizados y control de cerraduras |
+| **Viewer** | Acceso en modo solo lectura |
 
 ---
 
-# Estructura del proyecto
+## Estructura del proyecto
 
 ```text
 cerraduras-iot/
@@ -151,14 +144,14 @@ cerraduras-iot/
 
 ---
 
-# Despliegue
+## Despliegue
 
-## Requisitos
+### Requisitos
 
 - Docker
 - Docker Compose
 
-## Inicio del sistema
+### Inicio del sistema
 
 ```bash
 docker compose up -d --build
@@ -166,17 +159,17 @@ docker compose up -d --build
 
 ---
 
-# Acceso
+## Acceso a servicios
 
-| Servicio       | URL                         |
-| --------------- | --------------------------- |
-| Web             | http://localhost:8080       |
-| API             | http://localhost:8000       |
-| Home Assistant  | http://localhost:8123       |
+| Servicio | URL |
+|-----------|-----|
+| Web | http://localhost:8080 |
+| API | http://localhost:8000 |
+| Home Assistant | http://localhost:8123 |
 
 ---
 
-# Objetivos del proyecto
+## Objetivos del proyecto
 
 - Integrar tecnologías IoT modernas
 - Automatizar la gestión de accesos
@@ -186,7 +179,7 @@ docker compose up -d --build
 
 ---
 
-# Futuras mejoras
+## Futuras mejoras
 
 - Integración con IA multimodal
 - Soporte para cerraduras físicas mediante ESP32
@@ -196,6 +189,6 @@ docker compose up -d --build
 
 ---
 
-# Repositorio
+## Repositorio
 
 Proyecto desarrollado como Trabajo Final de Grado del ciclo ASIR.
